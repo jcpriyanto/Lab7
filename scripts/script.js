@@ -44,7 +44,7 @@ settingsIcon.addEventListener("click", () => {
 
 const headingTag = document.getElementsByTagName('h1')[0];
 headingTag.addEventListener("click", () => {
-  window.history.pushState({currentState: 1, entryNumber: 0, entryItem: null}, "home", "/"); //TODO: TEST THIS
+  window.history.pushState({currentState: 1, entryNumber: 0, entryItem: null}, "home", "/Lab7/"); //TODO: TEST THIS
   router.setState(1, 0, null);
 });
 
