@@ -49,11 +49,13 @@ headingTag.addEventListener("click", () => {
 });
 
 window.onpopstate = function(event) {
-  if(event.state.currentState === 1){
-    router.setState(1, 0, null);
-  } else if (event.state.currentState === 3) {
-    router.setState(3, 0, null);
+  if(event.state != null) { 
+    if(event.state.currentState === 2){
+      router.setState(2, event.state.entryNumber, event.state.entryItem);
+    } else if (event.state.currentState === 3) {
+      router.setState(3, 0, null);
+    }
   } else {
-    router.setState(2, event.state.entryNumber, event.state.entryItem);
+    router.setState(1, 0, null);
   }
 }
