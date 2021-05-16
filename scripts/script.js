@@ -44,11 +44,12 @@ settingsIcon.addEventListener("click", () => {
 
 const headingTag = document.getElementsByTagName('h1')[0];
 headingTag.addEventListener("click", () => {
-  window.history.pushState({currentState: 1, entryNumber: 0, entryItem: null}, "home", "/Lab7/"); //TODO: TEST THIS
+  window.history.pushState({currentState: 1, entryNumber: 0, entryItem: null}, "home", "/"); //TODO: TEST THIS
   router.setState(1, 0, null);
 });
 
 window.onpopstate = function(event) {
+  console.log(event.state);
   if(event.state != null) { 
     if(event.state.currentState === 2){
       router.setState(2, event.state.entryNumber, event.state.entryItem);
